@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('images/frontpage.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.20); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+
+.header.scrolled {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 80px; /* Slightly larger logo */
+    width: auto;
+    margin-right: 15px;
+
+}
+
+.header .logo span {
+    font-size: 34px; /* Elegant font size */
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navigation styles */
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin: 0 25px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 8px 30px;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    
+}
+
+/* Hover effect for navigation */
+.nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Content Box */
+.content {
+    margin-top: 50px;
+    height: 600px;
+    width: auto;
+    background: rgba(85, 84, 84, 0.5);
+    padding: 50px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #0cc443;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #d60000;
+    transform: scale(1.05);
+}
+
+
+/* Preloader Styles */
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #0dd66e, #da697d, #ffcc00); /* Green → Pink → Yellow */
+    background-size: 300% 300%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: bgAnimation 5s infinite alternate;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Background Animation for Gradient Effect */
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Logo Animation - Slow blinking */
+.preloader-logo {
+    width: 500px; /* Adjust size */
+    animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Hide main content initially */
+.main-content {
+    display: none;
+}

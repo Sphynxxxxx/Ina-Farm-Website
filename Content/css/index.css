@@ -60,7 +60,7 @@ body {
 }
 
 .navbar.scrolled .navbar-brand img {
-    height: 60px;
+    height: 50px;
 }
 
 .nav-link {
@@ -225,4 +225,17 @@ footer {
 .footer-links a:hover {
     color: var(--secondary-color);
     transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    
+    .navbar-brand img {
+        height: 40px;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled .navbar-brand img {
+        height: 50px;
+    }
+    
 }

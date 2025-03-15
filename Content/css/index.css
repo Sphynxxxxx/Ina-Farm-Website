@@ -242,4 +242,32 @@ footer {
         padding-bottom: 10px;
     }
 
+    .navbar-nav .nav-item {
+        padding: 5px 0;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+    
+    /* Ensure the logo has appropriate size on smaller screens */
+    .logo-img {
+        height: 40px;
+    }
+
+    @media (max-width: 575.98px) {
+        .navbar-collapse {
+            margin-top: 10px;
+        }
+        
+        .logo-img {
+            height: 35px;
+        }
+        
+        .navbar-toggler {
+            padding: 4px 8px;
+        }
+    }
+
 }

@@ -90,6 +90,10 @@ body {
     width: 100%;
 }
 
+.logo-img {
+    height: 50px;
+    width: auto;
+}
 
 /* Hero Section */
 .hero {
@@ -226,4 +230,16 @@ footer {
 .footer-links a:hover {
     color: var(--secondary-color);
     transform: translateX(5px);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: 10px;
+    }
+    
+    .navbar .container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
 }

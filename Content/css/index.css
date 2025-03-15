@@ -121,11 +121,13 @@ body {
 
 /* Responsive Welcome Section */
 .welcome-section {
-    background: url('../images/DSC00275.jpg') no-repeat center center/cover;
-    padding: 100px 0;
-    min-height: 600px;
+    background-image: url('../images/DSC00275.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    padding: 80px 0;
     position: relative;
-    overflow: hidden;
+    height: auto;
 }
 
 .welcome-section::before {
@@ -139,8 +141,15 @@ body {
 }
 
 .welcome-section .container {
-    position: relative; 
+    position: relative;
     z-index: 2;
+    overflow: visible;
+}
+
+.image-overlay-caption {
+    position: static;
+    transform: none;
+    overflow: visible;
 }
 
 /* Services Section */

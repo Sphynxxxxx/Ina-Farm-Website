@@ -54,6 +54,10 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.navbar-brand img {
+    height: 50px;
+    transition: all 0.3s ease;
+}
 
 .navbar.scrolled .navbar-brand img {
     height: 50px;

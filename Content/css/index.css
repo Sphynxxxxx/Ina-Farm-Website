@@ -91,13 +91,17 @@ body {
 }
 
 .logo-img {
-    height: 50px;
+    height: 35px;
     width: auto;
     transition: all 0.3s ease;
 }
 
 .navbar.scrolled .logo-img {
     height: 35px;
+}
+
+.navbar .container {
+    height: 60px;
 }
 
 /* Hero Section */
@@ -238,35 +242,36 @@ footer {
 }
 
 @media (max-width: 991.98px) {
-    .navbar-collapse {
-        margin-top: 10px;
-        background-color: rgba(0, 0, 0, 0.8);
-        border-radius: 8px;
-        padding: 10px;
-    }
-
-    .navbar-toggler {
-        padding: 5px 10px;
-        margin-left: auto;
+    .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
     }
     
-    .navbar .container {
-        padding-top: 10px;
-        padding-bottom: 10px;
+    .navbar-collapse {
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        width: 200px;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        padding: 10px;
+        z-index: 1000;
     }
-
+    
+    .navbar-toggler {
+        margin-left: 15px;
+        padding: 4px 8px;
+    }
+    
     .navbar-nav .nav-item {
         padding: 5px 0;
     }
     
     .navbar-nav .nav-link {
         padding: 8px 15px;
+        text-align: center;
     }
-    
-    /* Ensure the logo has appropriate size on smaller screens */
-    .logo-img {
-        height: 20px;
-    }
+
 
     @media (max-width: 575.98px) {
         .navbar-collapse {

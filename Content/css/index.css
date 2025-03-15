@@ -93,6 +93,11 @@ body {
 .logo-img {
     height: 50px;
     width: auto;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .logo-img {
+    height: 35px;
 }
 
 /* Hero Section */
@@ -235,6 +240,14 @@ footer {
 @media (max-width: 991.98px) {
     .navbar-collapse {
         margin-top: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .navbar-toggler {
+        padding: 5px 10px;
+        margin-left: auto;
     }
     
     .navbar .container {
@@ -247,8 +260,7 @@ footer {
     }
     
     .navbar-nav .nav-link {
-        padding: 10px 15px;
-        font-size: 18px;
+        padding: 8px 15px;
     }
     
     /* Ensure the logo has appropriate size on smaller screens */

@@ -8,6 +8,20 @@
 body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    font-size: 16px; /* Base font size */
+}
+
+/* Improved responsive text sizing */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
 }
 
 /* Preloader */
@@ -33,7 +47,8 @@ body {
 }
 
 .preloader-logo {
-    width: 300px;
+    width: 70%; /* More responsive sizing */
+    max-width: 300px;
     animation: blink 2s infinite ease-in-out;
 }
 
@@ -42,7 +57,7 @@ body {
     50% { opacity: 1; }
 }
 
-/* Navbar */
+/* Navbar - Improved Mobile */
 .navbar {
     padding: 15px 0;
     transition: all 0.4s ease;
@@ -69,6 +84,7 @@ body {
     margin: 0 10px;
     position: relative;
     transition: all 0.3s ease;
+    padding: 0.5rem 0.75rem; /* More touch-friendly padding */
 }
 
 .nav-link:hover, .nav-link.active {
@@ -88,6 +104,25 @@ body {
 
 .nav-link:hover::after, .nav-link.active::after {
     width: 100%;
+}
+
+/* Improved mobile navbar */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: rgba(33, 37, 41, 0.95);
+        border-radius: 0 0 8px 8px;
+        padding: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.75rem; /* Larger touch targets */
+        margin: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
 }
 
 /* Hero Section */
@@ -112,6 +147,7 @@ body {
 .hero-content {
     position: relative;
     z-index: 1;
+    padding: 20px; /* Add padding for mobile */
 }
 
 .hero img {
@@ -119,26 +155,28 @@ body {
     height: auto;
 }
 
-/* Welcome Section*/
+/* Welcome Section - Improved Mobile */
 .welcome-section {
     background-image: url('../images/DSC00275.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    padding: 150px 0;
+    padding: 150px 0 200px; /* Extra padding at bottom to account for negative margins */
     position: relative;
     height: auto;
 }
 
 .welcome-section::before {
-    padding-top: 0;
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.2) 100%);
+    background: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 255, 255, 0.3) 30%, 
+    rgba(255, 255, 255, 0) 100%); 
 }
 
 .welcome-section .container {
@@ -147,31 +185,37 @@ body {
     overflow: visible;
 }
 
+/* Heading and text adjustments with better mobile scaling */
 .welcome-section h2.display-5 {
     position: relative;
     top: -150px; 
     margin-bottom: 0;
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 6px 6px 0 0;
     padding: 10px 15px;
     display: inline-block;
-    z-index: 10; 
+    z-index: 10;
+    font-size: 2rem; 
+    width: 100%; 
+    text-align: center;
 }
 
 .welcome-section p.lead {
     position: relative;
-    top: -160px; 
+    top: -150px; 
     margin-top: -5px; 
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
     padding: 5px 15px 10px;
-    display: inline-block;
+    display: block; 
     z-index: 10;
+    width: 100%;
+    text-align: center;
 }
 
 .welcome-section .p-4 p.mb-4 {
     position: relative;
-    top: -190px; 
+    top: -150px; 
     margin-top: -5px;
     padding: 10px 15px 15px; 
     border-radius: 0 0 6px 6px; 
@@ -193,21 +237,15 @@ body {
     overflow: visible;
 }
 
-/* Style for the larger image in welcome section */
-.welcome-section .img-fluid {
-    max-height: 500px;
-    object-fit: cover;
-    width: 100%;
-}
-
+/* Feature cards  */
 .d-flex.align-items-start {
     position: relative;
-    top: -200px; 
-    background-color: rgba(255, 255, 255, 0.8);
+    top: -130px; 
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px; 
+    margin-bottom: 20px; 
     z-index: 6;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -220,10 +258,48 @@ body {
 .d-flex.align-items-start i {
     color: #0cc443;
     font-size: 1.5rem;
+    min-width: 30px;
 }
 
 .d-flex > div h3 {
     color: #0c4600;
+    font-size: 1.1rem; 
+    margin-bottom: 0.5rem;
+}
+
+.d-flex > div p {
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* About Us button positioning */
+.text-center.mt-4 {
+    position: relative;
+    top: 200px; 
+    margin-top: 100px; 
+    margin-bottom: 50px; 
+    z-index: 5;
+    padding-top: 30px;
+}
+
+/* Improved button styling for mobile */
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px; 
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.btn-primary-custom:hover, .btn-primary-custom:active {
+    background-color: #09a038;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 /* Services Section */
@@ -233,36 +309,108 @@ body {
     color: var(--light-color);
 }
 
-/* Footer */
-footer {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    padding: 50px 0 20px;
-    text-align: center;
+.services-section h2 {
+    color: var(--secondary-color);
 }
 
-/* Custom Button Styles */
-.btn-primary-custom {
-    background-color: var(--primary-color);
-    color: white;
+
+
+/* Card styling */
+.custom-card {
+    background-color: rgba(255, 255, 255, 0.9);
     border: none;
-    padding: 10px 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card .card-body {
+    padding: 25px 20px;
+}
+
+.custom-card .card-title {
+    color: var(--primary-color);
+}
+
+.custom-card .card-text {
+    color: var(--dark-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Card icon styling */
+.card-icon-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon-wrapper i {
+    font-size: 24px;
+    color: white;
+}
+
+/* Button styling */
+.custom-card .btn-primary-custom {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 8px 20px;
     border-radius: 5px;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
-.btn-primary-custom:hover {
+.custom-card .btn-primary-custom:hover {
     background-color: #09a038;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive adjustments */
+/* Footer - Improved for mobile */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+
+.btn-primary-custom, 
+.btn-outline-custom {
+    margin-bottom: 20px; 
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Enhanced Responsive adjustments */
+@media (max-width: 992px) {
+    .welcome-section h2.display-5 {
+        font-size: 1.8rem;
+    }
+}
+
 @media (max-width: 768px) {
     .welcome-section {
-        padding: 80px 0;
+        padding: 80px 0 160px; 
     }
     
     .welcome-section .img-fluid {
@@ -278,31 +426,81 @@ footer {
         text-align: center;
     }
 
-    .welcome-section h2.display-5,
-    .welcome-section p.lead,
+    .welcome-section h2.display-5 {
+        top: -100px;
+        font-size: 1.6rem; 
+        padding: 8px 12px;
+    }
+    
+    .welcome-section p.lead {
+        top: -100px;
+        font-size: 1rem;
+    }
+    
     .welcome-section .p-4 p.mb-4 {
-        top: -25px;
+        top: -100px;
+        font-size: 0.95rem;
     }
 
     .d-flex.align-items-start {
-        top: -120px;
-        margin-bottom: -100px;
+        top: -80px;
+        margin-bottom: 15px;
+    }
+    
+    .text-center.mt-4 {
+        top: 40px;
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+
+    .services-section {
+        padding: 80px 0;
+    }
+    
+    .custom-card {
+        margin-bottom: 20px;
+    }
+    
+    .card-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .card-icon-wrapper i {
+        font-size: 20px;
+    }
+
+    .btn-primary-custom, 
+    .btn-outline-custom {
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 576px) {
     .welcome-section {
-        padding: 60px 0;
+        padding: 60px 0 150px;
     }
     
     .welcome-section .img-fluid {
         max-height: 300px;
     }
 
-    .welcome-section h2.display-5,
-    .welcome-section p.lead,
+    .welcome-section h2.display-5 {
+        top: -70px;
+        font-size: 1.4rem;
+        padding: 8px 10px;
+    }
+    
+    .welcome-section p.lead {
+        top: -70px;
+        font-size: 0.95rem;
+        padding: 5px 10px;
+    }
+    
     .welcome-section .p-4 p.mb-4 {
-        top: -20px;
+        top: -70px;
+        font-size: 0.9rem;
+        padding: 8px 10px 12px;
     }
     
     .navbar-brand img {
@@ -315,7 +513,101 @@ footer {
     }
 
     .d-flex.align-items-start {
-        top: -100px;
-        margin-bottom: -80px;
+        top: -50px;
+        margin-bottom: 12px;
+        padding: 12px;
+    }
+    
+    .d-flex.align-items-start i {
+        font-size: 1.3rem;
+    }
+    
+    .d-flex > div h3 {
+        font-size: 1rem;
+    }
+    
+    .text-center.mt-4 {
+        top: -30px;
+    }
+    
+    .btn-primary-custom {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .services-section {
+        padding: 60px 0;
+    }
+    
+    .custom-card .card-body {
+        padding: 20px 15px;
+    }
+    
+    .card-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .card-icon-wrapper i {
+        font-size: 18px;
+    }
+
+    .btn-primary-custom, 
+    .btn-outline-custom {
+        margin-bottom: 10px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 400px) {
+    .welcome-section h2.display-5 {
+        font-size: 1.2rem;
+        top: -60px;
+    }
+    
+    .welcome-section p.lead {
+        font-size: 0.9rem;
+        top: -60px;
+    }
+    
+    .welcome-section .p-4 p.mb-4 {
+        font-size: 0.85rem;
+        top: -60px;
+    }
+    
+    .d-flex.align-items-start {
+        top: -40px;
+        padding: 10px;
+    }
+    
+    .d-flex > div h3 {
+        font-size: 0.95rem;
+    }
+    
+    .d-flex > div p {
+        font-size: 0.85rem;
+    }
+    
+    .text-center.mt-4 {
+        top: 30px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    .services-section {
+        padding: 60px 0;
+    }
+    
+    .custom-card .card-body {
+        padding: 20px 15px;
+    }
+    
+    .card-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .card-icon-wrapper i {
+        font-size: 18px;
     }
 }

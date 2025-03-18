@@ -142,11 +142,10 @@ body::before {
 }
 
 footer {
-    background-color: rgba(12, 70, 0, 0.9);
+    background-color: #212529;
     color: white;
     padding: 3rem 0 1rem;
     margin-top: 2rem;
-    border-radius: 15px 15px 0 0;
 }
 
 /* Medium devices (tablets) */

@@ -147,7 +147,7 @@ body {
 .hero-content {
     position: relative;
     z-index: 1;
-    padding: 20px; /* Add padding for mobile */
+    padding: 20px; 
 }
 
 .hero img {
@@ -161,7 +161,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    padding: 150px 0 200px; /* Extra padding at bottom to account for negative margins */
+    padding: 150px 0 200px; 
     position: relative;
     height: auto;
 }

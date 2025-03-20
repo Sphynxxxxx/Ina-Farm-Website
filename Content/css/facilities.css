@@ -101,7 +101,7 @@ body::before {
 }
 
 .facility-card img {
-    height: 200px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -121,6 +121,22 @@ body::before {
     color: #0c4600;
 }
 
+.flat-top-btn {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.price-tag {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: #0c4600 !important; 
+    min-width: 160px;
+    text-align: center;
+}
+.capacity-text {
+    font-size: 0.75rem !important;
+    margin-top: 2px;
+}
 .section-title {
     position: relative;
     margin-bottom: 3rem;
@@ -221,6 +237,11 @@ footer {
     .footer-links a {
         display: block;
         margin-bottom: 0.5rem;
+    }
+
+    .price-tag {
+        padding: 0.4rem 0.8rem !important;
+        min-width: 140px;
     }
 }
 

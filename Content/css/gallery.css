@@ -238,6 +238,7 @@ body::before {
     z-index: 1050 !important;
 }
 
+
 .facility-modal .modal-content {
     border-radius: 10px;
     overflow: hidden;

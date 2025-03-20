@@ -126,6 +126,16 @@ body::before {
     border-top-right-radius: 0 !important;
 }
 
+.flat-top-btn.btn-success {
+    background-color: #0c4600;
+}
+
+.flat-top-btn.btn-success:hover {
+    background-color: #146d02;
+    color: white !important;
+}
+
+
 .price-tag {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;

@@ -23,8 +23,8 @@ body::before {
 
 .gallery-hero {
     position: relative;
-    min-height: 500px; 
-    height: 70vh; 
+    min-height: 800px; 
+    height: 100vh; 
     width: 100%;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ body::before {
     padding: 3rem;
     text-align: center;
     width: 90%; 
-    max-width: 850px;
+    max-width: auto;
     margin: 0 auto; 
     backdrop-filter: blur(8px);
     background-color: rgba(0, 0, 0, 0.5);
@@ -48,13 +48,27 @@ body::before {
 }
 
 .company-title {
-    color: #0c9600 !important; 
-    font-size: 2.5rem !important;
+        background: linear-gradient(to right, 
+        #ed67ff 0%,     
+        #FF69B4 10%,     
+        #1E90FF 33%,    
+        #038303 80%,   
+        #32CD32 100%   
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+    color: transparent;
+    font-size: 7rem !important;
     font-weight: 700 !important;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
     margin-bottom: 0.75rem !important;
     line-height: 1.2 !important;
+    display: inline-block;
+    background-size: 100% auto;
 }
+
+
 
 .gallery-title {
     color: #ffffff !important;
@@ -331,7 +345,7 @@ footer {
 /* Medium devices (tablets) */
 @media (max-width: 991.98px) {
     .gallery-hero {
-        height: 60vh;
+        height: 100vh;
         min-height: 450px;   
         align-items: center;
         margin: 0 0.5rem; 
@@ -344,6 +358,8 @@ footer {
 
     .company-title {
         font-size: 2rem !important;
+        -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.7);
+
     }
 
     .gallery-title {
@@ -353,13 +369,14 @@ footer {
     .facility-carousel .carousel-item img {
         height: 350px;
     }
+
 }
 
 /* Small devices (phones) */
 @media (max-width: 767.98px) {
     .gallery-hero {
         min-height: 400px; 
-        height: 65vh;
+        height: 100vh;
         align-items: center;
         margin: 0 0.25rem; 
     }
@@ -372,6 +389,7 @@ footer {
 
     .company-title {
         font-size: 1.8rem !important;
+        -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.7);
     }
 
     .gallery-title {
@@ -422,7 +440,7 @@ footer {
 /* Extra small devices */
 @media (max-width: 575.98px) {
     .gallery-hero {
-        height: 70vh;
+        height: 100vh;
         margin: 0 0.25rem;
     }
 
@@ -434,6 +452,7 @@ footer {
 
     .company-title {
         font-size: 1.5rem !important;
+        -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.7);
     }
     
     .gallery-title {

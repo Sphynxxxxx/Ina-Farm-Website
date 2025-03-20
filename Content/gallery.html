@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - INA Farmers Learning Site & Agri-Farm Inc.</title>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: #000;
+            transition: background-image 1s ease-in-out;
+            position: relative;
+            overflow-x: hidden; 
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .gallery-hero {
+            position: relative;
+            height: 60vh;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 0 1rem;
+            background-image: url('images/facilities/Garden.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-hero-content {
+            padding: 2rem;
+            text-align: left;
+            max-width: 550px;
+            margin-bottom: 3rem;
+            margin-left: 2rem;
+            backdrop-filter: blur(5px);
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .gallery-section {
+            padding: 5rem 0;
+            background-color: rgba(248, 249, 250, 0.9);
+            border-radius: 15px;
+            margin: 2rem 1rem;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            text-align: center;
+            color: #0c4600;
+            font-size: calc(1.5rem + 1vw);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #0c4600;
+        }
+
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .gallery-category {
+            cursor: pointer;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            margin: 0.5rem;
+            font-weight: 600;
+            background-color: white;
+            color: #495057;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-category.active {
+            background-color: #0c4600;
+            color: white;
+        }
+
+        .gallery-category:hover:not(.active) {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        .gallery-item {
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(12, 70, 0, 0.7);
+            padding: 15px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+
+        /* View more button styles */
+        .view-more-btn {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            background-color: white;
+            color: #0c4600;
+            border: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .view-more-btn:hover {
+            background-color: #f0f0f0;
+            color: #083600;
+            transform: translateY(-2px);
+        }
+
+        /* Modal styles */
+        .modal-backdrop {
+            z-index: 1040 !important;
+        }
+
+        .facility-modal {
+            z-index: 1050 !important;
+        }
+        
+        .facility-modal .modal-content {
+            border-radius: 10px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .facility-modal .modal-header {
+            background-color: #0c4600;
+            color: white;
+            border-bottom: none;
+        }
+
+        .facility-modal .modal-header .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+
+        .facility-modal .modal-footer {
+            border-top: none;
+        }
+        
+        .facility-modal .modal-footer a.btn {
+            cursor: pointer !important;
+            pointer-events: auto !important;
+            position: relative;
+            z-index: 5;
+        }
+
+        .facility-modal .modal-footer a.btn-success:hover {
+            background-color: #0a3d00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Enhanced Carousel styles */
+        .facility-carousel {
+            position: relative;
+        }
+
+        .facility-carousel .carousel-item {
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .facility-carousel .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .facility-carousel .carousel-caption {
+            background-color: rgba(12, 70, 0, 0.7);
+            border-radius: 5px;
+            padding: 15px;
+            bottom: 20px;
+            left: 10%;
+            right: 10%;
+            pointer-events: none;
+            display: block !important;
+        }
+
+        .facility-carousel .carousel-control-prev-icon,
+        .facility-carousel .carousel-control-next-icon {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+            padding: 15px;
+            background-size: 50%;
+        }
+        .facility-carousel .carousel-control-prev,
+        .facility-carousel .carousel-control-next {
+            z-index: 100 !important;
+            opacity: 0.8;
+            width: 15%; /* Make the clickable area wider */
+        }
+
+        .facility-carousel .carousel-control-prev:hover,
+        .facility-carousel .carousel-control-next:hover {
+            opacity: 1;
+        }
+
+        .facility-carousel .carousel-indicators {
+            z-index: 1000 !important;
+        }
+
+        .facility-carousel .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 4px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+        }
+
+        .facility-carousel .carousel-indicators button.active {
+            background-color: #fff;
+        }
+
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Medium devices (tablets) */
+        @media (max-width: 991.98px) {
+            .gallery-hero {
+                height: 40vh;
+            }
+            
+            .facility-carousel .carousel-item img {
+                height: 350px;
+            }
+        }
+
+        /* Small devices (phones) */
+        @media (max-width: 767.98px) {
+            .gallery-hero-content {
+                padding: 1.5rem;
+                margin-left: 0;
+                max-width: 100%;
+            }
+
+            .gallery-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                margin-bottom: 2rem;
+            }
+
+            .gallery-category {
+                padding: 0.5rem 1rem;
+                margin: 0.25rem;
+            }
+            
+            .facility-carousel .carousel-item img {
+                height: 250px;
+            }
+            
+            .facility-carousel .carousel-caption {
+                padding: 10px;
+            }
+            
+            .facility-carousel .carousel-caption h5 {
+                font-size: 1rem;
+                margin-bottom: 5px;
+            }
+            
+            .facility-carousel .carousel-caption p {
+                font-size: 0.8rem;
+                margin-bottom: 0;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 575.98px) {
+            .gallery-hero {
+                height: 30vh;
+            }
+
+            .gallery-hero-content {
+                padding: 1rem;
+            }
+
+            .gallery-hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body id="page-body">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="images/straightlogo.png" alt="INA Farmers Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facilities.html">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Training.html">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="gallery-hero">
+            <div class="gallery-hero-content">
+                <h1 class="display-4 fw-bold mb-3">Photo Gallery</h1>
+                <p class="lead mb-4">Explore the beauty of our facilities, gardens, and activities through our visual journey</p>
+                <a href="#gallery-collection" class="btn btn-primary-custom me-3">Browse Gallery</a>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery-collection" class="gallery-section">
+            <div class="container">
+                <h2 class="section-title display-5 fw-bold">Our Gallery Collection</h2>
+                
+                <div class="gallery-categories">
+                    <div class="gallery-category active" data-filter="all">All</div>
+                    <div class="gallery-category" data-filter="facilities">Facilities</div>
+                    <div class="gallery-category" data-filter="activities">Activities</div>
+                    <div class="gallery-category" data-filter="agriculture">Agriculture</div>
+                    <div class="gallery-category" data-filter="events">Events</div>
+                </div>
+                
+                <div class="row gallery-container">
+                    <!-- Facilities Images -->
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="facilities" data-facility="angelonia">
+                        <img src="images/facilities/Angelonia.png" alt="Angelonia Room">
+                        <div class="gallery-item-overlay">
+                            <h5>Angelonia Room</h5>
+                            <p>Comfortable accommodations for guests</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="facilities" data-facility="gazania">
+                        <img src="images/facilities/Gazania.png" alt="Gazania Room">
+                        <div class="gallery-item-overlay">
+                            <h5>Gazania Room</h5>
+                            <p>Spacious room for families and groups</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="facilities" data-facility="petunia">
+                        <img src="images/facilities/Petunia.png" alt="Petunia Room">
+                        <div class="gallery-item-overlay">
+                            <h5>Petunia Room</h5>
+                            <p>Our premium accommodation option</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="facilities" data-facility="zinnia">
+                        <img src="images/facilities/Zinnia.png" alt="Zinnia Room">
+                        <div class="gallery-item-overlay">
+                            <h5>Zinnia Room</h5>
+                            <p>Cozy room with modern amenities</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="facilities" data-facility="pool">
+                        <img src="images/facilities/Swimming Pool.png" alt="Swimming Pool">
+                        <div class="gallery-item-overlay">
+                            <h5>Swimming Pool</h5>
+                            <p>Refresh and relax in our swimming pool</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="facilities" data-facility="cafeteria">
+                        <img src="images/facilities/Cafeteria.png" alt="Cafeteria">
+                        <div class="gallery-item-overlay">
+                            <h5>Cafeteria</h5>
+                            <p>Enjoy delicious farm-to-table meals</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="facilities" data-facility="training">
+                        <img src="images/facilities/Training Center.png" alt="Training Center">
+                        <div class="gallery-item-overlay">
+                            <h5>Training Center</h5>
+                            <p>Modern facilities for agricultural education</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="facilities" data-facility="pavilion">
+                        <img src="images/facilities/Pavilion.png" alt="Pavilion">
+                        <div class="gallery-item-overlay">
+                            <h5>Pavilion</h5>
+                            <p>Open-air venue for gatherings and events</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Activities Images (placeholders) -->
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="activities" data-facility="demo">
+                        <img src="images/facilities/Demo Area.png" alt="Farming Demonstration">
+                        <div class="gallery-item-overlay">
+                            <h5>Farming Demonstration</h5>
+                            <p>Hands-on agricultural learning experiences</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Agriculture Images (placeholders) -->
+                    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-category="agriculture" data-facility="garden">
+                        <img src="images/facilities/Garden.png" alt="Organic Garden">
+                        <div class="gallery-item-overlay">
+                            <h5>Organic Garden</h5>
+                            <p>Sustainable farming practices in action</p>
+                            <button class="view-more-btn">View more photos</button>
+                        </div>
+                    </div>
+                    
+                    <!-- You would add more images for each category in your actual implementation -->
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="facilities.html" class="btn btn-primary-custom">View Our Facilities</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <img src="images/straightlogo.png" alt="INA Farmers Logo" class="img-fluid mb-4" style="height: 80px;">
+                        <p>A premier institute for farm mechanization and Agri-tourism in Western Visayas, serving as a prime institute for post-harvest mechanization and advancement in agriculture.</p>
+                        <div class="social-icons mt-4">
+                            <a href="https://www.facebook.com/inafarmerslearningsiteagrifarm"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.youtube.com/@inafarm2023"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h5 class="fw-bold mb-4">Quick Links</h5>
+                        <div class="footer-links">
+                            <a href="../index.html">Home</a>
+                            <a href="facilities.html">Facilities</a>
+                            <a href="products.html">Products</a>
+                            <a href="services.html">Services</a>
+                            <a href="training.html">Training</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="about.html">About Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 mb-md-0">
+                        <h5 class="fw-bold mb-4">Services</h5>
+                        <div class="footer-links">
+                            <a href="services.html">Agricultural Training</a>
+                            <a href="services.html">Farm Tours</a>
+                            <a href="services.html">Workshops & Seminars</a>
+                            <a href="services.html">Agri-Tourism</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="fw-bold mb-4">Contact Info</h5>
+                        <div class="footer-links">
+                            <a href="#"><i class="bi bi-geo-alt me-2"></i> Brgy. Agcuyawan Calsada, Barotac Nuevo, Iloilo</a>
+                            <a href="#"><i class="bi bi-telephone me-2"></i> +639 670 669 541 / +639 770 869 097</a>
+                            <a href="#"><i class="bi bi-envelope me-2"></i> ina_farmers_training_center@yahoo.com</a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.1);">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; 2024 INA Farmers Learning Site & Agri-Farm Inc. | All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0 credits">Designed by Larry Denver J. Biaco & Vince N. Javier</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Photo Carousel Modal -->
+    <div class="modal fade facility-modal" id="photoCarouselModal" tabindex="-1" aria-labelledby="photoCarouselModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoCarouselModalLabel">Facility Photos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <!-- Carousel -->
+                    <div id="facilityCarousel" class="carousel slide facility-carousel" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <!-- Carousel items will be dynamically populated -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#facilityCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#facilityCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="facilities.html" id="facilityDetailsLink" class="btn btn-success" target="_blank">View Details</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Gallery filtering
+            const categoryButtons = document.querySelectorAll('.gallery-category');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Facility data with multiple images
+            const facilityData = {
+                angelonia: {
+                    name: "Angelonia Room",
+                    images: [
+                        {
+                            src: "images/facilities/Angelonia.png",
+                            title: "Main View",
+                            caption: "Our comfortable Angelonia accommodation"
+                        },
+                        {
+                            src: "images/facilities/Angelonia.png", // Same image used as placeholder
+                            title: "Interior View",
+                            caption: "Spacious and comfortable interior"
+                        },
+                        {
+                            src: "images/facilities/Angelonia.png", // Same image used as placeholder
+                            title: "Bathroom",
+                            caption: "Clean and modern bathroom facilities"
+                        }
+                    ]
+                },
+                // Other facility data remains unchanged
+                gazania: {
+                    name: "Gazania Room",
+                    images: [
+                        {
+                            src: "images/facilities/Gazania.png",
+                            title: "Main View",
+                            caption: "Our luxurious Gazania accommodation"
+                        },
+                        {
+                            src: "images/facilities/Gazania.png", // Same image used as placeholder
+                            title: "Interior View",
+                            caption: "Spacious room with modern furnishings"
+                        },
+                        {
+                            src: "images/facilities/Gazania.png", // Same image used as placeholder
+                            title: "Dining Area",
+                            caption: "Comfortable dining space for family meals"
+                        }
+                    ]
+                },
+                petunia: {
+                    name: "Petunia Room",
+                    images: [
+                        {
+                            src: "images/facilities/Petunia.png",
+                            title: "Main View",
+                            caption: "Our premium Petunia accommodation"
+                        },
+                        {
+                            src: "images/facilities/Petunia.png", // Same image used as placeholder
+                            title: "Interior View",
+                            caption: "Elegant and spacious living area"
+                        },
+                        {
+                            src: "images/facilities/Petunia.png", // Same image used as placeholder
+                            title: "Bedroom",
+                            caption: "Comfortable sleeping arrangements"
+                        }
+                    ]
+                },
+                zinnia: {
+                    name: "Zinnia Room",
+                    images: [
+                        {
+                            src: "images/facilities/Zinnia.png",
+                            title: "Main View",
+                            caption: "Our cozy Zinnia accommodation"
+                        },
+                        {
+                            src: "images/facilities/Zinnia.png", // Same image used as placeholder
+                            title: "Living Area",
+                            caption: "Comfortable living space"
+                        },
+                        {
+                            src: "images/facilities/Zinnia.png", // Same image used as placeholder
+                            title: "Bedroom",
+                            caption: "Peaceful sleeping area"
+                        }
+                    ]
+                },
+                pool: {
+                    name: "Swimming Pool",
+                    images: [
+                        {
+                            src: "images/facilities/Swimming Pool.png",
+                            title: "Swimming Pool",
+                            caption: "Refresh and relax in our inviting pool"
+                        },
+                        {
+                            src: "images/facilities/Swimming Pool.png", // Same image used as placeholder
+                            title: "Pool Area",
+                            caption: "Spacious pool area for recreation"
+                        },
+                        {
+                            src: "images/facilities/Swimming Pool.png", // Same image used as placeholder
+                            title: "Pool Side",
+                            caption: "Relaxing pool side amenities"
+                        }
+                    ]
+                },
+                cafeteria: {
+                    name: "Cafeteria",
+                    images: [
+                        {
+                            src: "images/facilities/Cafeteria.png",
+                            title: "Cafeteria",
+                            caption: "Our farm-to-table dining experience"
+                        },
+                        {
+                            src: "images/facilities/Cafeteria.png",
+                            title: "Dining Area",
+                            caption: "Spacious and comfortable dining area"
+                        },
+                        {
+                            src: "images/facilities/Cafeteria.png",
+                            title: "Food Service",
+                            caption: "Fresh and local food offerings"
+                        }
+                    ]
+                },
+                training: {
+                    name: "Training Center",
+                    images: [
+                        {
+                            src: "images/facilities/Training Center.png",
+                            title: "Training Center",
+                            caption: "State-of-the-art agricultural education facility"
+                        },
+                        {
+                            src: "images/facilities/Training Center.png",
+                            title: "Classroom",
+                            caption: "Modern classroom setup"
+                        },
+                        {
+                            src: "images/facilities/Training Center.png",
+                            title: "Equipment",
+                            caption: "Hands-on training equipment"
+                        }
+                    ]
+                },
+                pavilion: {
+                    name: "Pavilion",
+                    images: [
+                        {
+                            src: "images/facilities/Pavilion.png",
+                            title: "Pavilion",
+                            caption: "Perfect venue for events and gatherings"
+                        },
+                        {
+                            src: "images/facilities/Pavilion.png",
+                            title: "Event Space",
+                            caption: "Versatile space for various activities"
+                        },
+                        {
+                            src: "images/facilities/Pavilion.png",
+                            title: "Seating Area",
+                            caption: "Comfortable seating arrangements"
+                        }
+                    ]
+                },
+                demo: {
+                    name: "Demo Area",
+                    images: [
+                        {
+                            src: "images/facilities/Demo Area.png",
+                            title: "Demo Area",
+                            caption: "Hands-on agricultural learning area"
+                        },
+                        {
+                            src: "images/facilities/Demo Area.png",
+                            title: "Equipment Display",
+                            caption: "Agricultural equipment demonstrations"
+                        },
+                        {
+                            src: "images/facilities/Demo Area.png",
+                            title: "Learning Space",
+                            caption: "Interactive learning environment"
+                        }
+                    ]
+                },
+                garden: {
+                    name: "Garden",
+                    images: [
+                        {
+                            src: "images/facilities/Garden.png",
+                            title: "Garden",
+                            caption: "Beautiful and sustainable garden space"
+                        },
+                        {
+                            src: "images/facilities/Garden.png",
+                            title: "Plants",
+                            caption: "Variety of plants and crops"
+                        },
+                        {
+                            src: "images/facilities/Garden.png",
+                            title: "Walkway",
+                            caption: "Scenic garden walkways"
+                        }
+                    ]
+                }
+            };
+            
+            // View more button functionality
+            const viewMoreBtns = document.querySelectorAll('.view-more-btn');
+            const photoCarouselModal = document.getElementById('photoCarouselModal');
+            let carouselModal;
+            
+            // Initialize modal
+            if (photoCarouselModal) {
+                carouselModal = new bootstrap.Modal(photoCarouselModal);
+                
+                // This ensures the carousel is properly initialized after the modal is shown
+                photoCarouselModal.addEventListener('shown.bs.modal', function() {
+                    // Initialize or reinitialize the carousel
+                    const carousel = document.querySelector('facilityCarousel');
+                    
+                    // Destroy existing instance if it exists
+                    if (bsCarousel) {
+                        bsCarousel.dispose();
+                    }
+                    
+                    // Create a new instance
+                    bsCarousel = new bootstrap.Carousel(carousel, {
+                        interval: 5000,
+                        touch: true,
+                        ride: 'carousel'
+                    });
+                });
+            }
+            
+            // Add a separate event listener for the facility details link
+            document.getElementById('facilityDetailsLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                const facilityId = this.getAttribute('data-facility-id');
+                if (facilityId) {
+                    // Close the modal
+                    if (carouselModal) {
+                        carouselModal.hide();
+                    }
+                    
+                    // Small delay to ensure modal has time to close
+                    setTimeout(function() {
+                        window.location.href = 'facilities.html#' + facilityId;
+                    }, 300);
+                } else {
+                    window.location.href = 'facilities.html';
+                }
+            });
+            
+            viewMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent triggering the parent gallery item click
+                    
+                    // Get the parent gallery item
+                    const galleryItem = this.closest('.gallery-item');
+                    
+                    // Get data attributes
+                    const facilityId = galleryItem.getAttribute('data-facility');
+                    const facility = facilityData[facilityId];
+                    
+                    if (facility) {
+                        // Update modal title
+                        document.getElementById('photoCarouselModalLabel').textContent = facility.name + ' Photos';
+                        
+                        // Update facility details link
+                        const facilityDetailsLink = document.getElementById('facilityDetailsLink');
+                        facilityDetailsLink.href = 'facilities.html#' + facilityId;
+                        facilityDetailsLink.setAttribute('data-facility-id', facilityId);
+                        facilityDetailsLink.style.pointerEvents = 'auto';
+                        
+                        // Clear existing carousel items
+                        const carouselInner = document.querySelector('#facilityCarousel .carousel-inner');
+                        carouselInner.innerHTML = '';
+                        
+                        // Update carousel indicators
+                        const carouselIndicators = document.querySelector('#facilityCarousel .carousel-indicators');
+                        carouselIndicators.innerHTML = '';
+                        
+                        // Add new carousel items and indicators
+                        facility.images.forEach((image, index) => {
+                            // Create indicator button
+                            const indicator = document.createElement('button');
+                            indicator.setAttribute('type', 'button');
+                            indicator.setAttribute('data-bs-target', '#facilityCarousel');
+                            indicator.setAttribute('data-bs-slide-to', index);
+                            if (index === 0) {
+                                indicator.setAttribute('class', 'active');
+                                indicator.setAttribute('aria-current', 'true');
+                            }
+                            indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+                            carouselIndicators.appendChild(indicator);
+                            
+                            // Create carousel item
+                            const carouselItem = document.createElement('div');
+                            carouselItem.className = index === 0 ? 'carousel-item active' : 'carousel-item';
+                            
+                            carouselItem.innerHTML = `
+                                <img src="${image.src}" class="d-block w-100" alt="${image.title}">
+                                <div class="carousel-caption">
+                                    <h5>${image.title}</h5>
+                                    <p>${image.caption}</p>
+                                </div>
+                            `;
+                            
+                            carouselInner.appendChild(carouselItem);
+                        });
+                        
+                        // Show the modal
+                        carouselModal.show();
+                    }
+                });
+            });
+            
+            // Gallery item click handler (direct click on image)
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    // Only trigger if the click was not on the view more button
+                    if (!e.target.closest('.view-more-btn')) {
+                        // Find and click the view more button
+                        const viewMoreBtn = this.querySelector('.view-more-btn');
+                        if (viewMoreBtn) {
+                            viewMoreBtn.click();
+                        }
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -60,7 +60,7 @@ body {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Css/images/frontpage.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/frontpage.png') no-repeat center center/cover;
     padding: 150px 0 100px;
     text-align: center;
     color: var(--light-color);

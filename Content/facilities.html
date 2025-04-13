@@ -28,24 +28,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="facilities.html">Facilities</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active" href="facilities.html" id="facilitiesDropdown">
+                            Facilities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="facilitiesDropdown">
+                            <li><a class="dropdown-item" href="facilities.html#accomodation">Accomodation</a></li>
+                            <li><a class="dropdown-item" href="facilities.html#facilities">Facilities</a></li>
+                            <li><a class="dropdown-item" href="facilities.html#functions_events">Functions & Events</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="Content/products.html" id="productsDropdown">
+                        <a class="nav-link" href="products.html" id="productsDropdown">
                             Products
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="productsDropdown">
                             <li><a class="dropdown-item" href="Content/products.html">All Products</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="Content/products.html#agri-products">Agri-Products</a></li>
-                            <li><a class="dropdown-item" href="Content/products.html#aqua-products">Aqua-Products</a></li>
-                            <li><a class="dropdown-item" href="Content/products.html#organic-products">Organic Production</a></li>
-                            <li><a class="dropdown-item" href="Content/products.html#ornamental-production">Ornamental Production</a></li>
+                            <li><a class="dropdown-item" href="products.html#agri-products">Agri-Products</a></li>
+                            <li><a class="dropdown-item" href="products.html#aqua-products">Aqua-Products</a></li>
+                            <li><a class="dropdown-item" href="products.html#organic-products">Organic Production</a></li>
+                            <li><a class="dropdown-item" href="products.html#ornamental-production">Ornamental Production</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Trainings & Seminars</a>
+                        <a class="nav-link" href="training.html">Trainings & Seminars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
@@ -97,7 +107,7 @@
                         <div class="carousel-item" data-bg="images/facilities/Cafeteria.png">
                             <img src="images/facilities/Cafeteria.png" class="d-block w-100" alt="Cafeteria">
                             <div class="carousel-caption">
-                                <h3>Casa Fly Verde</h3>
+                                <h3>Casa Ely Verde</h3>
                                 <p>Enjoy a variety of delicious meals and beverages in our spacious and comfortable cafeteria, offering both local and international dishes.</p>
                             </div>
                         </div>
@@ -188,7 +198,7 @@
         </section>
 
         <!-- Facilities Details Section -->
-        <section id="facility-details" class="facilities-section">
+        <section id="accomodation" class="facilities-section">
             <div class="container">
                 <h2 class="section-title display-5 fw-bold">World-Class Accomodation</h2>
                 
@@ -331,7 +341,7 @@
                     </div>
 
                     <!-- Facilities -->
-                    <div class="container">
+                    <div id="facilities" class="container">
                         <h2 class="section-title display-5 fw-bold text-center mb-5">Facilities</h2>
                         <div class="row g-4">
                             
@@ -341,7 +351,7 @@
                                 <div class="facility-card card">
                                     <img src="images/facilities/Cafeteria.png" class="card-img-top" alt="Cafeteria">
                                     <div class="card-body">
-                                        <h3 class="card-title h4 fw-bold">Casa Fly Verde</h3>
+                                        <h3 class="card-title h4 fw-bold">Casa Ely Verde</h3>
                                         <p class="card-text">Enjoy a variety of delicious meals and beverages in our spacious and comfortable cafeteria, offering both local and international dishes.</p>
                                         <ul class="list-unstyled mt-3">
                                             <li><i class="bi bi-check-circle-fill text-success me-2"></i> Daily meal specials</li>
@@ -427,9 +437,8 @@
                     </div>
                 </div>
 
-                <div class="container">
+                <div id="functions_events" class="container">
                     <h2 class="section-title display-5 fw-bold text-center mb-5">Functions & Events</h2>
-
                     <div class="row g-4">
                         <!-- Training Center -->
                         <div class="col-md-6 col-lg-4">
@@ -511,8 +520,8 @@
                             <a href="../index.html">Home</a>
                             <a href="facilities.html">Facilities</a>
                             <a href="products.html">Products</a>
-                            <a href="services.html">Training and Seminars</a>
-                            <a href="training.html">Training</a>
+                            <a href="training.html">Training and Seminars</a>
+                            <a href="menu.html">Menu</a>
                             <a href="gallery.html">Gallery</a>
                             <a href="about.html">About Us</a>
                         </div>
@@ -520,18 +529,19 @@
                     <div class="col-md-3 mb-4 mb-md-0">
                         <h5 class="fw-bold mb-4">Services</h5>
                         <div class="footer-links">
-                            <a href="services.html">Agricultural Training</a>
-                            <a href="services.html">Farm Tours</a>
-                            <a href="services.html">Workshops & Seminars</a>
-                            <a href="services.html">Agri-Tourism</a>
+                            <a>Agricultural Training</a>
+                            <a>Farm Tours</a>
+                            <a>Workshops & Seminars</a>
+                            <a>Agri-Tourism</a>
+                            <a>Farm Mechanization</a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <h5 class="fw-bold mb-4">Contact Info</h5>
                         <div class="footer-links">
-                            <a href="#"><i class="bi bi-geo-alt me-2"></i> Brgy. Agcuyawan Calsada, Barotac Nuevo, Iloilo</a>
-                            <a href="#"><i class="bi bi-telephone me-2"></i> +639 670 669 541 / +639 770 869 097</a>
-                            <a href="#"><i class="bi bi-envelope me-2"></i> ina_farmers_training_center@yahoo.com</a>
+                            <a><i class="bi bi-geo-alt me-2"></i> Brgy. Agcuyawan Calsada, Barotac Nuevo, Iloilo</a>
+                            <a><i class="bi bi-telephone me-2"></i> +639 670 669 541 / +639 770 869 097</a>
+                            <a><i class="bi bi-envelope me-2"></i> ina_farmers_training_center@yahoo.com</a>
                         </div>
                     </div>
                 </div>

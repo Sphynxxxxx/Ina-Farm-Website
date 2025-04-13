@@ -28,8 +28,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="facilities.html">Facilities</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="facilities.html" id="facilitiesDropdown">
+                            Facilities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="facilitiesDropdown">
+                            <li><a class="dropdown-item" href="facilities.html#accomodation">Accomodation</a></li>
+                            <li><a class="dropdown-item" href="facilities.html#facilities">Facilities</a></li>
+                            <li><a class="dropdown-item" href="facilities.html#functions_events">Functions & Events</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link active" href="products.html" id="productsDropdown">
@@ -43,9 +50,12 @@
                             <li><a class="dropdown-item" href="#organic-production">Organic Production</a></li>
                             <li><a class="dropdown-item" href="#ornamental-production">Ornamental Production</a></li>
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="services.html">Trainings & Seminars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
@@ -113,9 +123,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="https://th.bing.com/th/id/OIP.TkTFzYORTHlA3Ul15nYveAHaE5?rs=1&pid=ImgDetMain" class="product-img" alt="Organic Rice">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Herbs</h3>
@@ -129,9 +139,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="https://static.wixstatic.com/media/d268df_c13b3a2e15ea479ab432cc1db7ee764c~mv2_d_6000_4000_s_4_2.jpg/v1/fill/w_1920,h_1280,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/d268df_c13b3a2e15ea479ab432cc1db7ee764c~mv2_d_6000_4000_s_4_2.jpg" class="product-img" alt="Organic Rice">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Rice</h3>
@@ -145,9 +155,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/agri2.png" class="product-img" alt="Fresh Vegetables">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Fresh Vegetables</h3>
@@ -161,9 +171,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/agri1.png" class="product-img" alt="Tropical Fruits">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Fruits</h3>
@@ -191,9 +201,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/tilapia.png" class="product-img" alt="Fresh Tilapia">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Fresh Tilapia</h3>
@@ -207,9 +217,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/catfish.png" class="product-img" alt="Milkfish (Bangus)">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Catfish (Pantat)</h3>
@@ -237,9 +247,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/vermi1.png" class="product-img" alt="Organic Compost">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Vermi-Composting</h3>
@@ -253,9 +263,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="https://www.researchgate.net/publication/334749290/figure/fig1/AS:786090927595520@1564430090045/Herbal-concoctions-prescribed-for-various-health-ailments-The-herbal-concoctions-are.jpg" class="product-img" alt="Vermicast">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Concotion and Extracts</h3>
@@ -284,9 +294,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/seedlings.png" class="product-img" alt="Organic Compost">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Seedlings</h3>
@@ -300,9 +310,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/orn2.png" class="product-img" alt="Vermicast">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Sunflower</h3>
@@ -317,9 +327,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/orn5.png" class="product-img" alt="Vermicast">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Sunflower</h3>
@@ -334,9 +344,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/orn4.png" class="product-img" alt="Vermicast">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Sunflower</h3>
@@ -350,9 +360,9 @@
                     <div class="product-card h-100">
                         <div class="product-img-container">
                             <img src="images/pottings.png" class="product-img" alt="Liquid Bio-Fertilizer">
-                            <div class="product-overlay">
+                            <!--<div class="product-overlay">
                                 <a href="#" class="btn btn-primary-custom">View Details</a>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Pottings</h3>
@@ -405,7 +415,8 @@
                         <a href="../index.html">Home</a>
                         <a href="facilities.html">Facilities</a>
                         <a href="products.html">Products</a>
-                        <a href="services.html">Services</a>
+                        <a href="training.html">Training and Seminars</a>
+                        <a href="menu.html">Menu</a>
                         <a href="gallery.html">Gallery</a>
                         <a href="about.html">About Us</a>
                     </div>
@@ -413,19 +424,19 @@
                 <div class="col-md-3 mb-4 mb-md-0">
                     <h5 class="fw-bold mb-4">Services</h5>
                     <div class="footer-links">
-                        <a href="#">Agricultural Training</a>
-                        <a href="#">Farm Tours</a>
-                        <a href="#">Workshops & Seminars</a>
-                        <a href="#">Agri-Tourism</a>
-                        <a href="#">Farm Mechanization</a>
+                        <a>Agricultural Training</a>
+                        <a>Farm Tours</a>
+                        <a>Workshops & Seminars</a>
+                        <a>Agri-Tourism</a>
+                        <a>Farm Mechanization</a>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <h5 class="fw-bold mb-4">Contact Info</h5>
                     <div class="footer-links">
-                        <a href="#"><i class="bi bi-geo-alt me-2"></i> Brgy. Agcuyawan Calsada, Barotac Nuevo, Iloilo</a>
-                        <a href="#"><i class="bi bi-telephone me-2"></i> +639 670 669 541 / +639 770 869 097</a>
-                        <a href="#"><i class="bi bi-envelope me-2"></i> ina_farmers_training_center@yahoo.com</a>
+                        <a><i class="bi bi-geo-alt me-2"></i> Brgy. Agcuyawan Calsada, Barotac Nuevo, Iloilo</a>
+                        <a><i class="bi bi-telephone me-2"></i> +639 670 669 541 / +639 770 869 097</a>
+                        <a><i class="bi bi-envelope me-2"></i> ina_farmers_training_center@yahoo.com</a>
                     </div>
                 </div>
             </div>

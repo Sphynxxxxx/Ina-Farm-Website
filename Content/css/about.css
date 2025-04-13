@@ -5,6 +5,8 @@
     --light-color: #f8f9fa;
 }
 
+
+
 body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
@@ -12,8 +14,8 @@ body {
 
 /* Navbar */
 .navbar {
-    transition: all 0.3s ease;
-    padding: 1rem 0;
+    padding: 15px 0;
+    transition: all 0.4s ease;
 }
 
 .navbar.scrolled {
@@ -37,6 +39,7 @@ body {
     margin: 0 10px;
     position: relative;
     transition: all 0.3s ease;
+    padding: 0.5rem 0.75rem; 
 }
 
 .nav-link:hover, .nav-link.active {
@@ -74,8 +77,9 @@ body {
 .about-card {
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(12, 70, 0, 0.1);
     overflow: hidden;
+    border-left: 5px solid  rgb(25 135 84);
 }
 
 .mission-vision {
@@ -88,8 +92,9 @@ body {
     border-radius: 15px;
     padding: 40px 30px;
     height: 100%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px rgba(12, 70, 0, 0.05);
     transition: all 0.3s ease;
+    border-top: 4px solid rgb(25 135 84);
 }
 
 .mission-vision-card:hover {
@@ -98,7 +103,7 @@ body {
 }
 
 .mission-vision-card h3 {
-    color: var(--primary-color);
+    color: rgb(25 135 84);
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -118,8 +123,9 @@ body {
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px rgba(12, 70, 0, 0.05);
     transition: all 0.3s ease;
+    border-bottom: 4px solid rgb(25 135 84);
 }
 
 .team-card:hover {
@@ -182,42 +188,19 @@ body {
     color: #6c757d;
     margin-bottom: 0;
 }
+.main-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-/* Footer */
 footer {
     background-color: var(--dark-color);
     color: var(--light-color);
-    padding: 50px 0 20px;
-}
-
-.social-icons a {
-    color: var(--light-color);
-    margin: 0 10px;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: var(--secondary-color);
-    transform: translateY(-5px);
-}
-
-.footer-links a {
-    color: var(--light-color);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.footer-links a:hover {
-    color: var(--secondary-color);
-    transform: translateX(5px);
-}
-
-/* Animation classes */
-.fade-in-up {
-    animation: fadeInUp 1s ease forwards;
+    padding: 40px 0 20px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 @keyframes fadeInUp {

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Ely Verde Menu - INA Farmers Learning Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/straightlogo.png" alt="INA Farmers Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="facilities.html" id="facilitiesDropdown">
+                            Facilities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="facilitiesDropdown">
+                            <li><a class="dropdown-item" href="facilities.html#accomodation">Accomodation</a></li>
+                            <li><a class="dropdown-item" href="facilities.html#facilities">Facilities</a></li>
+                            <li><a class="dropdown-item" href="facilities.html#functions_events">Functions & Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="products.html" id="productsDropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="products.html#agri-products">Agri-Products</a></li>
+                            <li><a class="dropdown-item" href="products.html#aqua-products">Aqua-Products</a></li>
+                            <li><a class="dropdown-item" href="products.html#organic-products">Organic Production</a></li>
+                            <li><a class="dropdown-item" href="products.html#ornamental-production">Ornamental Production</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Trainings & Seminars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-container">
+        <!-- Hero Section -->
+        <div class="menu-header">
+            <h1 class="menu-title">Casa Ely Verde</h1>
+            <p class="menu-subtitle">Farm-to-table cuisine featuring fresh ingredients harvested from our organic gardens and locally sourced produce</p>
+            <a href="#menu-content" class="btn btn-success btn-lg px-4 py-2 rounded-pill">View Our Menu</a>
+        </div>
+        <a href="#menu-content" class="scroll-down">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </div>
+
+    <!-- Menu Content -->
+    <div id="menu-content" class="menu-content">
+        <div class="container">
+            <!-- Menu Navigation Tabs -->
+            <div class="menu-tabs">
+                <ul class="nav nav-pills" id="menuTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="special-tab" data-bs-toggle="pill" data-bs-target="#special" type="button" role="tab">
+                            <i class="bi bi-star-fill"></i> Daily Special
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="breakfast-tab" data-bs-toggle="pill" data-bs-target="#breakfast" type="button" role="tab">
+                            <i class="bi bi-sunrise"></i> Breakfast
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="appetizers-tab" data-bs-toggle="pill" data-bs-target="#appetizers" type="button" role="tab">
+                            <i class="bi bi-cup-straw"></i> Appetizers
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="mains-tab" data-bs-toggle="pill" data-bs-target="#mains" type="button" role="tab">
+                            <i class="bi bi-egg-fried"></i> Main Courses
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="local-tab" data-bs-toggle="pill" data-bs-target="#local" type="button" role="tab">
+                            <i class="bi bi-house"></i> Local Specialties
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="farm-tab" data-bs-toggle="pill" data-bs-target="#farm" type="button" role="tab">
+                            <i class="bi bi-flower1"></i> Farm Fresh
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="desserts-tab" data-bs-toggle="pill" data-bs-target="#desserts" type="button" role="tab">
+                            <i class="bi bi-cake2"></i> Desserts
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="drinks-tab" data-bs-toggle="pill" data-bs-target="#drinks" type="button" role="tab">
+                            <i class="bi bi-cup-hot"></i> Drinks
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="menuTabContent">
+                <!-- Daily Special Tab -->
+                <div class="tab-pane fade show active" id="special" role="tabpanel" aria-labelledby="special-tab">
+                    <div class="daily-special">
+                        <div class="daily-special-content">
+                            <span class="special-label">TODAY'S SPECIAL</span>
+                            <h2 class="special-title">(Name of Food)</h2>
+                            <p class="special-description">(description)</p>
+                            <div class="special-price">₱Price</div>
+                            <p>Available from 11:00 AM to 2:00 PM only</p>
+                            <div class="mt-3">
+                                <span class="menu-badge badge-organic">Organic</span>
+                                <span class="menu-badge badge-chef">Chef's Special</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3 class="mb-4">Why Our Daily Special?</h3>
+                            <p>description</p>
+                            <!--<p>The Farm Harvest Platter features a perfect balance of proteins and vegetables, all prepared with traditional methods and flavored with herbs grown in our own garden.</p>
+                            <p>We recommend pairing this special with our fresh fruit juice or herb-infused water for a complete farm-to-table experience.</p>-->
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dietary-guide">
+                                <h4 class="dietary-title">Dietary Guide</h4>
+                                <div class="dietary-item">
+                                    <span class="menu-badge badge-organic">Organic</span>
+                                    <span>Grown on our farm with organic methods</span>
+                                </div>
+                                <div class="dietary-item">
+                                    <span class="menu-badge badge-vegan">Vegan</span>
+                                    <span>Plant-based options available</span>
+                                </div>
+                                <div class="dietary-item">
+                                    <span class="menu-badge badge-spicy">Spicy</span>
+                                    <span>Contains hot spices</span>
+                                </div>
+                                <div class="dietary-item">
+                                    <span class="menu-badge badge-chef">Chef</span>
+                                    <span>Chef's special recommendation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Breakfast Tab -->
+                <div class="tab-pane fade" id="breakfast" role="tabpanel" aria-labelledby="breakfast-tab">
+                    <div class="menu-section">
+                        <h2 class="menu-section-title">Breakfast</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="menu-item-card">
+                                    <div class="menu-item-image">
+                                        <img src="https://via.placeholder.com/500x300.png?text=Filipino+Breakfast" alt="Filipino Breakfast">
+                                        <div class="menu-item-price">₱Price</div>
+                                    </div>
+                                    <div class="menu-item-info">
+                                        <h3 class="menu-item-title">Name of Food</h3>
+                                        <p class="menu-item-description">description</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appetizers Tab -->
+                <div class="tab-pane fade" id="appetizers" role="tabpanel" aria-labelledby="appetizers-tab">
+                    <div class="menu-section">
+                        <h2 class="menu-section-title">Appetizers</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="menu-item-card">
+                                    <div class="menu-item-image">
+                                        <img src="https://via.placeholder.com/500x300.png?text=Filipino+Breakfast" alt="Filipino Breakfast">
+                                        <div class="menu-item-price">₱Price</div>
+                                    </div>
+                                    <div class="menu-item-info">
+                                        <h3 class="menu-item-title">Name of Food</h3>
+                                        <p class="menu-item-description">description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Courses Tab -->
+                <div class="tab-pane fade" id="mains" role="tabpanel" aria-labelledby="mains-tab">
+                    <div class="menu-section">
+                        <h2 class="menu-section-title">Main Courses</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="menu-item-card">
+                                    <div class="menu-item-image">
+                                        <img src="https://via.placeholder.com/500x300.png?text=Filipino+Breakfast" alt="Filipino Breakfast">
+                                        <div class="menu-item-price">₱Price</div>
+                                    </div>
+                                    <div class="menu-item-info">
+                                        <h3 class="menu-item-title">Name of Food</h3>
+                                        <p class="menu-item-description">description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Specialties Tab -->
+                <div class="tab-pane fade" id="local" role="tabpanel" aria-labelledby="local-tab">
+                    <div class="menu-section">
+                        <h2 class="menu-section-title">Local Specialties</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="menu-item-card">
+                                    <div class="menu-item-image">
+                                        <img src="https://via.placeholder.com/500x300.png?text=Filipino+Breakfast" alt="Filipino Breakfast">
+                                        <div class="menu-item-price">₱Price</div>
+                                    </div>
+                                    <div class="menu-item-info">
+                                        <h3 class="menu-item-title">Name of Food</h3>
+                                        <p class="menu-item-description">description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Farm Fresh Tab -->
+                <div class="tab-pane fade" id="farm" role="tabpanel" aria-labelledby="farm-tab">
+                    <div class="menu-section">
+                        <h2 class="menu-section-title">Farm Fresh</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="menu-item-card">
+                                    <div class="menu-item-image">
+                                        <img src="https://via.placeholder.com/500x300.png?text=Filipino+Breakfast" alt="Filipino Breakfast">
+                                        <div class="menu-item-price">₱Price</div>
+                                    </div>
+                                    <div class="menu-item-info">
+                                        <h3 class="menu-item-title">Name of Food</h3>
+                                        <p class="menu-item-description">description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts Tab -->
+                <div class="tab-pane fade" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
+                    <div class="menu-section">
+                        <h2 class="menu-section-title">Desserts</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="menu-item-card">
+                                    <div class="menu-item-image">
+                                        <img src="https://via.placeholder.com/500x300.png?text=Filipino+Breakfast" alt="Filipino Breakfast">
+                                        <div class="menu-item-price">₱Price</div>
+                                    </div>
+                                    <div class="menu-item-info">
+                                        <h3 class="menu-item-title">Name of Food</h3>
+                                        <p class="menu-item-description">description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks Tab -->
+                <div class="tab-pane fade" id="drinks" role="tabpanel" aria-labelledby="drinks-tab">
+                    <div class="menu-section">
+                        <h2 class="menu-section-title">Drinks</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="menu-item-card">
+                                    <div class="menu-item-image">
+                                        <img src="https://via.placeholder.com/500x300.png?text=Filipino+Breakfast" alt="Filipino Breakfast">
+                                        <div class="menu-item-price">₱Price</div>
+                                    </div>
+                                    <div class="menu-item-info">
+                                        <h3 class="menu-item-title">Name of Food</h3>
+                                        <p class="menu-item-description">description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Private Events -->
+            <div class="private-events mt-5">
+                <h3 class="private-events-title">Private Dining & Events</h3>
+                <p>Casa Ely Verde offers private dining and catering services for special occasions, seminars, and corporate events. Our farm-to-table approach ensures freshness and quality for your gathering.</p>
+                <p>We can customize menus based on your preferences and dietary requirements. Please contact us for more information:</p>
+                <div class="mt-4">
+                    <a href="tel:+639670669541" class="btn btn-success me-3 mb-2">
+                        <i class="bi bi-telephone me-2"></i> +639 670 669 541
+                    </a>
+                    <a href="mailto:ina_farmers_training_center@yahoo.com" class="btn btn-outline-success mb-2">
+                        <i class="bi bi-envelope me-2"></i> Email Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <img src="images/straightlogo.png" alt="INA Farmers Logo" class="img-fluid mb-4" style="height: 80px;">
+                    <p>A premier institute for farm mechanization and Agri-tourism in Western Visayas, serving as a prime institute for post-harvest mechanization and advancement in agriculture.</p>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.facebook.com/inafarmerslearningsiteagrifarm"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/@inafarm2023"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="facilities.html">Facilities</a>
+                        <a href="products.html">Products</a>
+                        <a href="services.html">Training and Seminars</a>
+                        <a href="menu.html">Casa Ely Verde</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="about.html">About Us</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-4">Services</h5>
+                    <div class="footer-links">
+                        <a>Agricultural Training</a>
+                        <a>Farm Tours</a>
+                        <a>Workshops & Seminars</a>
+                        <a>Agri-Tourism</a>
+                        <a>Farm Mechanization</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-4">Contact Info</h5>
+                    <div class="footer-links">
+                        <a><i class="bi bi-geo-alt me-2"></i> Brgy. Agcuyawan Calsada, Barotac Nuevo, Iloilo</a>
+                        <a><i class="bi bi-telephone me-2"></i> +639 670 669 541 / +639 770 869 097</a>
+                        <a><i class="bi bi-envelope me-2"></i> ina_farmers_training_center@yahoo.com</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 INA Farmers Learning Site & Agri-Farm Inc. | All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 credits">Designed by Larry Denver J. Biaco & Vince N. Javier</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Initialize Bootstrap Tab
+            const triggerTabList = [].slice.call(document.querySelectorAll('#menuTabs button'));
+            triggerTabList.forEach(function (triggerEl) {
+                const tabTrigger = new bootstrap.Tab(triggerEl);
+                
+                triggerEl.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    tabTrigger.show();
+                });
+            });
+            
+            // Set active tab based on URL hash
+            const urlHash = window.location.hash;
+            if (urlHash) {
+                const activeTab = document.querySelector(`[data-bs-target="${urlHash}"]`);
+                if (activeTab) {
+                    bootstrap.Tab.getInstance(activeTab).show();
+                }
+            }
+            
+            // Image Lazy Loading
+            const lazyImages = document.querySelectorAll('.menu-item-image img');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.dataset.src;
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => {
+                    img.dataset.src = img.src;
+                    imageObserver.observe(img);
+                });
+            }
+            
+            // Animation for menu items
+            const animateItems = document.querySelectorAll('.menu-item-card');
+            
+            if ('IntersectionObserver' in window) {
+                const itemObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }, index * 100);
+                            itemObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                
+                animateItems.forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    itemObserver.observe(item);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

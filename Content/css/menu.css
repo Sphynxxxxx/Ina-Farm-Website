@@ -1,0 +1,445 @@
+:root {
+    --primary-green: #198754;
+    --light-green: rgba(25, 135, 84, 0.1);
+    --dark-green: #0c4600;
+    --accent-yellow: #ffc107;
+    --text-dark: #212529;
+    --text-light: #6c757d;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.menu-container {
+    background: url('../images/facilities/Cafeteria.png') no-repeat center center/cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+.menu-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+
+.navbar {
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background-color: rgba(33, 37, 41, 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+.menu-header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    padding: 2rem;
+}
+
+.menu-title {
+    font-family: 'Poppins', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-20px) translateX(-50%);}
+    60% {transform: translateY(-10px) translateX(-50%);}
+}
+
+.menu-content {
+    position: relative;
+    z-index: 2;
+    background-color: var(--white);
+    padding: 80px 0;
+}
+
+/* More specific selectors for menu-tabs to override Bootstrap styles */
+#menu-content .menu-tabs {
+    position: sticky;
+    top: 80px;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    z-index: 900;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+#menu-content .menu-tabs .nav-pills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#menu-content .menu-tabs .nav-item {
+    margin: 5px;
+}
+
+#menu-content .menu-tabs .nav-link {
+    color: var(--text-dark) !important;
+    border-radius: 50px !important;
+    padding: 8px 20px !important;
+    margin: 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: transparent !important;
+}
+
+#menu-content .menu-tabs .nav-link:hover {
+    background-color: var(--light-green) !important;
+    color: var(--primary-green) !important;
+}
+
+#menu-content .menu-tabs .nav-link.active {
+    background-color: var(--primary-green) !important;
+    color: var(--white) !important;
+}
+
+#menu-content .menu-tabs .nav-link i {
+    margin-right: 8px;
+}
+
+.menu-section {
+    margin-bottom: 60px;
+}
+
+.menu-section-title {
+    position: relative;
+    font-family: 'Poppins', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-green);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.menu-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-green);
+}
+
+.menu-item-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item-card:hover .menu-item-image img {
+    transform: scale(1.1);
+}
+
+.menu-item-price {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+.menu-item-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.menu-item-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.menu-item-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.menu-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-organic {
+    background-color: #20c997;
+    color: white;
+}
+
+.badge-vegan {
+    background-color: #198754;
+    color: white;
+}
+
+.badge-spicy {
+    background-color: #dc3545;
+    color: white;
+}
+
+.badge-chef {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.daily-special {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Sample image.png') no-repeat center center/cover;
+    color: var(--white);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.daily-special::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(rgba(255, 255, 255, 0.1), transparent 70%);
+    opacity: 0.7;
+    transform: rotate(30deg);
+    z-index: 1;
+}
+
+.daily-special-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.special-label {
+    display: inline-block;
+    background-color: var(--accent-yellow);
+    color: var(--text-dark);
+    font-weight: 700;
+    padding: 5px 20px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+.special-title {
+    font-family: 'Poppins', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.special-description {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.special-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.dietary-guide {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.dietary-title {
+    color: var(--primary-green);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.dietary-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.dietary-item .menu-badge {
+    margin-right: 15px;
+    width: 70px;
+    text-align: center;
+}
+
+.private-events {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.private-events-title {
+    color: var(--primary-green);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #212529;
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-green);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 991px) {
+    .menu-title {
+        font-size: 3.5rem;
+    }
+    
+    .menu-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    #menu-content .menu-tabs {
+        top: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-title {
+        font-size: 2.5rem;
+    }
+    
+    .menu-subtitle {
+        font-size: 1rem;
+    }
+    
+    .menu-section-title {
+        font-size: 2rem;
+    }
+    
+    .daily-special {
+        padding: 30px 20px;
+    }
+    
+    .special-title {
+        font-size: 2rem;
+    }
+    
+    .special-price {
+        font-size: 2rem;
+    }
+    
+    #menu-content .menu-tabs .nav-link {
+        padding: 6px 14px !important;
+        font-size: 0.9rem;
+    }
+}

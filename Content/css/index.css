@@ -429,7 +429,7 @@ footer p {
 }
 
 .dropdown-menu {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.658);
     border: none;
     border-radius: 0.5rem;
     margin-top: 0;

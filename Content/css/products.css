@@ -132,7 +132,7 @@ body {
 }
 
 .product-card:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgb(0, 0, 0);
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }

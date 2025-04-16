@@ -48,6 +48,17 @@ body {
 .navbar.scrolled {
     background-color: rgba(33, 37, 41, 0.9) !important;
     backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
+}
+
+/* Added navbar brand image styling to match index.css */
+.navbar-brand img {
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand img {
+    height: 50px;
 }
 
 .menu-header {
@@ -398,6 +409,11 @@ footer {
     #menu-content .menu-tabs {
         top: 60px;
     }
+    
+    /* Added responsive styling for navbar brand image */
+    .navbar-brand img {
+        height: 45px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -428,5 +444,15 @@ footer {
     #menu-content .menu-tabs .nav-link {
         padding: 6px 14px !important;
         font-size: 0.9rem;
+    }
+    
+    .navbar-brand img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 35px;
     }
 }

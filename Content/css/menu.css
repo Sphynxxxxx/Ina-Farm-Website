@@ -21,6 +21,14 @@ body {
     min-height: 100vh;
 }
 
+.menu-header-image {
+    width: 100%;
+    max-width: 600px; 
+    height: auto;
+}
+
+  
+
 .menu-container::before {
     content: '';
     position: absolute;
@@ -64,7 +72,7 @@ body {
 }
 
 .menu-subtitle {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 300;
     margin-bottom: 2rem;
     max-width: 700px;

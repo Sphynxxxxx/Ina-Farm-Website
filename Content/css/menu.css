@@ -28,7 +28,32 @@ body {
 }
 
   
+.menu-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 
+.full-menu-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .full-menu-image {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .full-menu-image {
+        max-width: 100%;
+    }
+}
 .menu-container::before {
     content: '';
     position: absolute;

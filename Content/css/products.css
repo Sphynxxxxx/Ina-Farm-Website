@@ -286,6 +286,7 @@ body {
 }
 
 .cta-card {
+    background: linear-gradient(135deg, #ffffff, #f1f9f1);
     border-radius: 20px;
     padding: 50px 40px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);

@@ -39,16 +39,6 @@ body {
     text-align: center; 
 }
 
-/* Responsive About Our Products Heading */
-.glass-card .card-body h1.h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: green;
-    transition: font-size 0.3s ease;
-}
-
 /* Paragraph Style */
 .glass-card .card-body p {
     color: rgb(255, 255, 255); 
@@ -71,18 +61,18 @@ body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Products section styling  */
-.products-section {
+/* Services section styling (for training programs and accreditation) */
+.services-section {
     padding: 80px 0;
     position: relative;
 }
 
-.products-section h2 {
+.services-section h2 {
     position: relative;
     display: inline-block;
 }
 
-.products-section h2::after {
+.services-section h2::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -94,24 +84,6 @@ body {
     border-radius: 3px;
 }
 
-.bg-light-custom {
-    background-color: rgba(225, 245, 225, 0.6);
-    position: relative;
-}
-
-/* Decorative elements */
-.bg-light-custom::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.6;
-    z-index: -1;
-}
-
 .text-white,
 .lead,
 .mb-5 {
@@ -120,8 +92,8 @@ body {
     letter-spacing: 0.025em; 
 }
 
-/* Product card styling*/
-.product-card {
+/* Service card styling */
+.service-card {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -131,166 +103,186 @@ body {
     transform: translateY(0);
     border-radius: 15px;
     overflow: hidden;
+    padding: 25px;
     display: flex;
     flex-direction: column;
 }
 
-.product-card:hover {
-    background: rgb(0, 0, 0);
+.service-card:hover {
+    background: rgba(0, 0, 0, 0.4);
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-/* Product image container */
-.product-img-container {
-    position: relative;
-    overflow: hidden;
-    height: 250px;
-    background-color: #f8f9fa;
-}
-
-.product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.product-card:hover .product-img {
-    transform: scale(1.05);
-}
-
-/* Product overlay with button */
-.product-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+/* Service icon */
+.service-icon {
     display: flex;
-    justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0cc443, #0a9e35);
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
-.product-card:hover .product-overlay {
-    opacity: 1;
+.service-icon i {
+    color: white;
+    font-size: 1.8rem;
 }
 
-.product-overlay .btn {
-    padding: 10px 20px;
-    font-weight: 500;
-    border-radius: 50px;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-}
-
-.product-card:hover .product-overlay .btn {
-    transform: translateY(0);
-}
-
-/* Product info section */
-.product-info {
-    padding: 25px;
+/* Service content */
+.service-content {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    
 }
 
-.product-title {
-    background-color: #0c4600;
-    border-radius: 10px;
+.service-title {
     color: white;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 15px;
     position: relative;
-    padding: 10px 15px; 
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-align: center; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
-.product-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%); 
-    width: 80%;
-    height: 3px;
-    background: linear-gradient(to right, #0cc443, #ffc107);
-    border-radius: 3px;
-    transition: width 0.3s ease;
-}
-
-.product-card:hover .product-title::after {
-    width: 90%; 
-}
-
-.product-description {
+.service-description {
     color: white;
     font-size: 0.95rem;
     margin-bottom: 15px;
-    flex-grow: 1;
     line-height: 1.6;
 }
 
-/* Product meta information */
-.product-meta {
+.service-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.service-list li {
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-list li i {
+    color: #0cc443;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.service-details {
     display: flex;
     justify-content: space-between;
-    font-size: 0.85rem;
-    color: white;
+    flex-wrap: wrap;
+    margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.product-category, .product-availability {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
+.service-details span {
+    color: #ddd;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 5px;
 }
 
-.product-category i, .product-availability i {
-    margin-right: 5px;
-    color: #3aff75;
-    
-}
-
-.product-category {
-    padding: 5px 10px;
-    background-color: #00300e;
-    border-radius: 20px;
-    color: white;
-}
-
-.product-availability {
-    padding: 5px 10px;
-    background-color: rgba(255, 193, 7, 0.1);
-    border-radius: 20px;
-}
-
-.product-availability i {
+.service-details span i {
     color: #0cc443;
+    margin-right: 5px;
 }
 
-/* Call to action section */
-.cta-section {
+/* Seminar card styling */
+.seminar-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+}
+
+.seminar-card:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.seminar-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0cc443, #0a9e35);
+    color: white;
+    padding: 15px;
+    min-width: 90px;
+}
+
+.seminar-date .day {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.seminar-date .month {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.seminar-content {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.seminar-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.seminar-description {
+    color: white;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.seminar-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.seminar-details span {
+    color: #ddd;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.seminar-details span i {
+    color: #0cc443;
+    margin-right: 5px;
+}
+
+/* Registration section */
+.registration-section {
     padding: 50px 0 100px;
 }
 
-.cta-card {
-    background: linear-gradient(135deg, #ffffff, #f1f9f1);
+.registration-card {
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     padding: 50px 40px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
@@ -298,7 +290,7 @@ body {
     overflow: hidden;
 }
 
-.cta-card::before {
+.registration-card::before {
     content: '';
     position: absolute;
     width: 150px;
@@ -309,7 +301,7 @@ body {
     left: -75px;
 }
 
-.cta-card::after {
+.registration-card::after {
     content: '';
     position: absolute;
     width: 150px;
@@ -320,7 +312,7 @@ body {
     right: -75px;
 }
 
-.cta-card .btn-primary-custom {
+.btn-primary-custom {
     background: linear-gradient(to right, #0cc443, #0a9e35);
     border: none;
     padding: 12px 30px;
@@ -329,15 +321,19 @@ body {
     letter-spacing: 0.5px;
     box-shadow: 0 5px 15px rgba(12, 196, 67, 0.3);
     transition: all 0.3s ease;
+    color: white;
 }
 
-.cta-card .btn-primary-custom:hover {
+.btn-primary-custom:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(12, 196, 67, 0.4);
+    color: white;
 }
 
-.cta-card .btn-outline-custom {
+.btn-outline-custom {
+    background: transparent;
     border: 2px solid #0cc443;
+    color: #0c4600;
     padding: 12px 30px;
     border-radius: 50px;
     font-weight: 500;
@@ -345,9 +341,10 @@ body {
     transition: all 0.3s ease;
 }
 
-.cta-card .btn-outline-custom:hover {
+.btn-outline-custom:hover {
     background-color: rgba(12, 196, 67, 0.1);
     transform: translateY(-3px);
+    color: #0c4600;
 }
 
 /* Navbar scrolled class for transparent to solid transition */
@@ -356,7 +353,7 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Fix for mobile gradient issues */
+/* Responsive styles */
 @media (max-width: 992px) {
     body {
         background-attachment: fixed; 
@@ -366,35 +363,52 @@ body {
         padding: 120px 0 60px;
     }
     
-    .products-section {
+    .services-section {
         padding: 60px 0;
     }
 
-    .cta-card {
+    .registration-card {
         padding: 40px 30px;
+    }
+    
+    .seminar-card {
+        flex-direction: column;
+    }
+    
+    .seminar-date {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .seminar-date .day {
+        font-size: 1.5rem;
+        margin-right: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    /* About Products heading responsive size for tablets */
-    .glass-card .card-body h1.h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1.25rem;
+    .service-icon {
+        width: 50px;
+        height: 50px;
     }
     
-    .product-img-container {
-        height: 220px;
+    .service-icon i {
+        font-size: 1.5rem;
     }
     
-    .product-title {
-        font-size: 1.2rem;
+    .service-title,
+    .seminar-title {
+        font-size: 1.3rem;
     }
     
-    .product-description {
+    .service-description,
+    .seminar-description {
         font-size: 0.9rem;
     }
     
-    .cta-card {
+    .registration-card {
         padding: 30px 20px;
     }
     
@@ -409,34 +423,24 @@ body {
         padding: 100px 0 50px;
     }
     
-    /* About Products heading responsive size for mobile */
-    .glass-card .card-body h1.h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        padding: 0 10px;
-    }
-    
     .glass-card .card-body p {
         font-size: 0.95rem;
         line-height: 1.5;
     }
     
-    .products-section {
+    .services-section {
         padding: 40px 0;
     }
     
-    .product-img-container {
-        height: 200px;
-    }
-    
-    .product-title::after {
-        width: 30px;
-    }
-    
-    .product-meta {
+    .service-details,
+    .seminar-details {
         flex-direction: column;
         gap: 10px;
-        align-items: flex-start;
+    }
+    
+    .service-details span,
+    .seminar-details span {
+        margin-right: 0;
     }
     
     /* Further reduce size of page header title for mobile */
@@ -447,24 +451,31 @@ body {
     .page-header p.lead {
         font-size: 1rem;
     }
+    
+    .btn-primary-custom,
+    .btn-outline-custom {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Extra small devices */
 @media (max-width: 375px) {
-    .glass-card .card-body h1.h2 {
-        font-size: 1.25rem;
-    }
-    
     .page-header h1.display-4 {
         font-size: 1.5rem;
     }
     
-    .product-title {
-        font-size: 1rem;
-        padding: 8px 10px;
+    .service-title,
+    .seminar-title {
+        font-size: 1.2rem;
     }
     
-    .product-description {
+    .service-description,
+    .seminar-description {
         font-size: 0.85rem;
+    }
+    
+    .registration-card {
+        padding: 25px 15px;
     }
 }

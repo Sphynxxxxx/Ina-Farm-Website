@@ -41,6 +41,17 @@ body {
     text-stroke: 0.5px rgb(255, 255, 255);
 }
 
+/* Responsive About Our Products Heading */
+.glass-card .card-body h1.h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: green;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.7);
+    text-stroke: 0.5px rgba(255, 255, 255, 0.7);
+    transition: font-size 0.3s ease;
+}
 
 /* Paragraph Style */
 .glass-card .card-body p {
@@ -48,7 +59,6 @@ body {
     font-size: 1.1rem; 
     line-height: 1.7; 
 }
-
 
 /* Overview section styling */
 .overview-section {
@@ -87,8 +97,6 @@ body {
     background: linear-gradient(to right, #0cc443, #ffc107);
     border-radius: 3px;
 }
-
-
 
 .bg-light-custom {
     background-color: rgba(225, 245, 225, 0.6);
@@ -346,8 +354,20 @@ body {
     transform: translateY(-3px);
 }
 
-/* Responsive adjustments */
+/* Navbar scrolled class for transparent to solid transition */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Fix for mobile gradient issues */
 @media (max-width: 992px) {
+    body {
+        background-attachment: scroll; /* Change from fixed to scroll on mobile */
+    }
+    
     .page-header {
         padding: 120px 0 60px;
     }
@@ -362,6 +382,12 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* About Products heading responsive size for tablets */
+    .glass-card .card-body h1.h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+    
     .product-img-container {
         height: 220px;
     }
@@ -377,11 +403,28 @@ body {
     .cta-card {
         padding: 30px 20px;
     }
+    
+    /* Reduce size of page header title for tablets */
+    .page-header h1.display-4 {
+        font-size: 2.5rem;
+    }
 }
 
 @media (max-width: 576px) {
     .page-header {
         padding: 100px 0 50px;
+    }
+    
+    /* About Products heading responsive size for mobile */
+    .glass-card .card-body h1.h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 0 10px;
+    }
+    
+    .glass-card .card-body p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
     
     .products-section {
@@ -400,5 +443,34 @@ body {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
+    }
+    
+    /* Further reduce size of page header title for mobile */
+    .page-header h1.display-4 {
+        font-size: 1.8rem;
+    }
+    
+    .page-header p.lead {
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .glass-card .card-body h1.h2 {
+        font-size: 1.25rem;
+    }
+    
+    .page-header h1.display-4 {
+        font-size: 1.5rem;
+    }
+    
+    .product-title {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+    
+    .product-description {
+        font-size: 0.85rem;
     }
 }

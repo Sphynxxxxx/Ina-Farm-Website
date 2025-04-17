@@ -46,8 +46,6 @@ body {
     margin-bottom: 1.5rem;
     text-align: center;
     color: green;
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.7);
-    text-stroke: 0.5px rgba(255, 255, 255, 0.7);
     transition: font-size 0.3s ease;
 }
 

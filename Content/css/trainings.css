@@ -353,6 +353,37 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.certificate-container {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.certificate-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.certificate-img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  object-fit: contain;
+}
+
+.certificate-img:hover {
+  transform: scale(1.02);
+}
+
+
 /* Responsive styles */
 @media (max-width: 992px) {
     body {

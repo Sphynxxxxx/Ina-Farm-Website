@@ -302,7 +302,7 @@ body {
 }
 
 .daily-special {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Sample image.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/samg.jpg') no-repeat center center/cover;
     color: var(--white);
     border-radius: 15px;
     padding: 40px;
